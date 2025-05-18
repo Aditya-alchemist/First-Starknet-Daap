@@ -1,0 +1,125 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #0d0f2b, #000000, #0a0a1f, #000000);
+  background-size: 300% 300%;
+  animation: bgShift 18s ease infinite;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background gradient animation */
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.App {
+  background: rgba(20, 20, 30, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #3a7bd5, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideDown 0.7s ease-out;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  margin: 12px 0;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: linear-gradient(135deg, #00ffe0, #5b5bff);
+  color: #000000;
+  font-weight: bold;
+  box-shadow: 0 0 16px rgba(0, 255, 224, 0.4);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 22px rgba(91, 91, 255, 0.7);
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 10px rgba(91, 91, 255, 0.5);
+}
+
+/* Counter & Text */
+p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #cfd4ff;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .App {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
